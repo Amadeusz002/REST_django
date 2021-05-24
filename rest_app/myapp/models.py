@@ -16,9 +16,10 @@ class Pvgis(models.Model):
     city = models.CharField(max_length=25)
     lon = models.IntegerField()
     lat = models.IntegerField()
-    slope = models.IntegerField()
-    azimuth = models.IntegerField()
+    start_year = models.IntegerField()
+    end_year = models.IntegerField()
+    slope = models.FloatField()
+    azimuth = models.FloatField()
     technology = models.CharField(max_length=25)
     peakPower = models.IntegerField()
     loss = models.IntegerField()
-

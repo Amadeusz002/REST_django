@@ -40,6 +40,16 @@
                                 {{ form.lat }}
                             </div>
                         </div>
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                {{ form.start_year }}
+                            </div>
+                        </div>
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                {{ form.end_year }}
+                            </div>
+                        </div>
                        <div class="field has-addons">
                             <div class="control is-expanded">
                                 {{ form.slope }}
@@ -80,7 +90,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-offset-4 is-4">
-                    {% for city_weather in weather_data %}
+                    {% for city_weather in data %}
                     <div class="box">
                         <article class="media">
                             <div class="media-left">
@@ -95,6 +105,24 @@
                                         <br>
                                         <span class="subtitle">{{ city_weather.temperature }}° C</span>
                                         <br> {{ city_weather.description }}
+                                        <br>
+                                        <span class="subtitle">Średnia temeperatura z najbliższych 7 dni</span>
+                                        <br> {{ city_weather.mean_day }}° C
+                                        <br>
+                                        <span class="subtitle">Średnia temeperatura rano</span>
+                                        <br> {{ city_weather.mean_morn }}° C
+                                        <br>
+                                        <span class="subtitle">Średnia temeperatura wieczór</span>
+                                        <br> {{ city_weather.mean_eve }}° C
+                                        <br>
+                                        <span class="subtitle">Średnia moc generowana przez panele słoneczne w latach {{city_weather.start_year}} - {{city_weather.end_year}}</span>
+                                        <br> {{ city_weather.mean_pow }} W
+                                        <br>
+                                        <span class="subtitle">Średnia prędkość wiartu</span>
+                                        <br> {{ city_weather.mean_wind }} m/s
+                                        <br>
+                                        <span class="subtitle">Średnie nasłonecznienie paneli</span>
+                                        <br> {{ city_weather.mean_irr }} W/m^2
                                     </p>
                                 </div>
                             </div>
